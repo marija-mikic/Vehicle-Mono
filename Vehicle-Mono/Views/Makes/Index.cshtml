@@ -1,0 +1,110 @@
+﻿@using Vehicle_Mono_BL.Paged
+@using Vehicle_Mono.ViewModel;
+@model PaginatedList<MakeViewModel>
+
+@{
+    ViewData["Title"] = "Makes";
+    var newSortOrder = (string)ViewData["SortOrder"] == "asc" ? "desc" : "asc";
+}
+
+<h1>Makes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            <input type="hidden" name="sortOrder" value="@ViewData["SortOrder"]" />
+            <input type="hidden" name="sortBy" value="@ViewData["SortBy"]" />
+            FILTER: <input type="text" name="searchTerm" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-action="Index">REMOVE FILTER</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col1">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@newSortOrder"
+                   asp-route-sortBy="Name"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    Name
+                </a>
+            </th>
+            <th class="col2">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@newSortOrder"
+                   asp-route-sortBy="Abrv"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    Abrv
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Abrv)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MakeId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MakeId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MakeId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table id="pagingTable" cellpadding="0" cellspacing="0">
+    <tr>
+        @* always show at most five page links *@
+        @{
+            int start = Model.PageIndex - 2;
+            int end = Model.PageIndex + 2;
+
+            if (end > Model.TotalPages)
+            {
+                start -= (end - Model.TotalPages);
+                end = Model.TotalPages;
+            }
+            if (start <= 0)
+            {
+                end -= start - 1;
+                start = 1;
+            }
+
+            end = end > Model.TotalPages ? Model.TotalPages : end;
+        }
+        @for (int i = start; i <= end; i++)
+        {
+            <td>
+                @if (i != Model.PageIndex)
+                {
+                    <a asp-action="Index"
+                       asp-route-sortOrder="@ViewData["SortOrder"]"
+                       asp-route-sortBy="@ViewData["SortBy"]"
+                       asp-route-pageNumber="@i"
+                       asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @i
+                    </a>
+                }
+                else
+                {
+                    <span>@i</span>
+                }
+            </td>
+        }
+    </tr>
+</table>

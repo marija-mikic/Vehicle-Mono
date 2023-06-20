@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Vehicle_Mono_BL.Paged;
+using Vehicle_Mono_BL.Selector;
 using Vehicle_Mono_DAL.Interface;
 
 namespace Vehicle_Mono_BL.Interface
 {
-    internal interface IModelVehicle
+    public interface IModelVehicle
     {
 
         Task<bool> Add(IModelV model);

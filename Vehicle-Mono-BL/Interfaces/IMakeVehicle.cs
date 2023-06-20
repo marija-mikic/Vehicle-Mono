@@ -4,13 +4,15 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using Vehicle_Mono_BL.Paged;
+using Vehicle_Mono_BL.Selector;
 using Vehicle_Mono_DAL.Interface;
 
 namespace Vehicle_Mono_BL.Interface
 {
     public interface IMakeVehicle
     {
-        //Task<PaginatedList<IMake>> GetAll(Paging paging, Sorting sorting, string searchTerm);
+        Task<PaginatedList<IMake>> GetAll(Paging paging, Sorting sorting, string searchTerm);
 
 
         public Task<bool> Add(IMake make);
@@ -18,8 +20,7 @@ namespace Vehicle_Mono_BL.Interface
 
         Task<bool> Edit(IMake make);
         Task<List<IMake>> GetAll();
-        // Task<string?> GetAll(Sorting sorting, string searchTerm, Paging paging);
-        Task<bool> Remove(int id);
+         Task<bool> Remove(int id);
     }
 }
-}
+

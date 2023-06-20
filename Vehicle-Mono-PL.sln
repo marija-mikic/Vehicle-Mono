@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle-Mono", "Vehicle-Mono\Vehicle-Mono.csproj", "{9694A553-CC5D-4E00-BA8D-DCF8C924AB0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle-Mono-PL", "Vehicle-Mono\Vehicle-Mono-PL.csproj", "{9694A553-CC5D-4E00-BA8D-DCF8C924AB0F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{410941AB-F436-481F-9441-40675AED88B8} = {410941AB-F436-481F-9441-40675AED88B8}
 		{82EA0B5A-2936-45B2-A331-2B069640F58A} = {82EA0B5A-2936-45B2-A331-2B069640F58A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle-Mono-BL", "Vehicle-Mono-BL\Vehicle-Mono-BL.csproj", "{410941AB-F436-481F-9441-40675AED88B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle-Mono-BL", "Vehicle-Mono-BL\Vehicle-Mono-BL.csproj", "{410941AB-F436-481F-9441-40675AED88B8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{82EA0B5A-2936-45B2-A331-2B069640F58A} = {82EA0B5A-2936-45B2-A331-2B069640F58A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle-Mono-DAL", "Vehicle-Mono-DAL\Vehicle-Mono-DAL.csproj", "{82EA0B5A-2936-45B2-A331-2B069640F58A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle-Mono-DAL", "Vehicle-Mono-DAL\Vehicle-Mono-DAL.csproj", "{82EA0B5A-2936-45B2-A331-2B069640F58A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

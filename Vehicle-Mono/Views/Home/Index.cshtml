@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 36vh;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            width: 300px;
+            background-color:aquamarine;
+            cursor: pointer;
+            justify-content: center;
+             
+            height: 30vh;
+        }
+
+        .card1 {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            width: 300px;
+            background-color: aquamarine;
+            cursor: pointer;
+             
+            height:30vh;
+        }
+
+            .card a {
+                text-decoration: none;
+                color:;
+            }
+    </style>
+</head>
+<body>
+    
+        <div class="card-container">
+            <a asp-controller="Makes" asp-action="Index"> 
+    <div class="card" onclick="getHref(this)">
+        <h3>MAKES</h3>
+
+     </div>
+        </a>
+    </div>
+   
+    
+        <div class="card-container">
+            <a asp-controller="Model" asp-action="Index">
+        <div class="card1" onclick="getHref(this)">
+            <h3>MODELS</h3>
+
+            </div>
+        </a>
+        </div>
+    
+    <script>
+        function getHref(card) {
+            var link = card.querySelector('a');
+            var href = link.getAttribute('href');
+            alert(href);
+        }
+    </script>
+</body>
+</html>

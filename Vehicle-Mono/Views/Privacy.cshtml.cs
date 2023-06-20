@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Vehicle_Mono.Pages
+namespace MonoVehicle.Views
 {
     public class PrivacyModel : PageModel
     {
