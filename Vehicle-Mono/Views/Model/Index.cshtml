@@ -15,7 +15,7 @@
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Search by make:
+            SEARCH:
             @Html.DropDownListFor(
             x => x.SelectedIdMake,
             new SelectList(Model.Makes, "MakeId", "Name", Model.SelectedIdMake),
@@ -26,7 +26,7 @@
         <p>
             <input type="hidden" name="sortOrder" value="@ViewData["SortOrder"]" />
             <input type="hidden" name="sortBy" value="@ViewData["SortBy"]" />
-            Search by name: <input type="text" name="searchTerm" value="@ViewData["Filtering"]" />
+            CHOOSE NAME: <input type="text" name="searchTerm" value="@ViewData["Filtering"]" />
             <input type="submit" value="Search" class="btn btn-primary" /> |
             <a asp-action="Index">REMOVE FILTER</a>
         </p>
